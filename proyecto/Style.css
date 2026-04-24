@@ -1,0 +1,101 @@
+/* Importamos una fuente moderna y limpia de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+	/* Sobreescribimos la paleta por defecto con tonos profesionales */
+	--bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+	--card-bg: #ffffff;
+	--text-main: #2d3436;
+	--accent-color: #0984e3;
+	--hover-color: #74b9ff;
+	--shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+	--shadow-lg: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: var(--bg-gradient);
+	color: var(--text-main);
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	/* Usamos Flexbox para centrar todo el contenido perfectamente */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Ocultamos elementos residuales de HP que ensucian el diseño */
+div.NavButtonBar {
+	display: none;
+}
+
+/* Área del título principal */
+div.Titles {
+	padding: 1rem;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.ExerciseTitle {
+	font-size: 2.5rem;
+	font-weight: 800;
+	color: var(--text-main);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+	margin: 0;
+}
+
+/* Contenedor tipo Tarjeta (Card) para el índice */
+div.IndexDiv {
+	background-color: var(--card-bg);
+	width: 90%;
+	max-width: 600px; /* Evita que se estire demasiado en monitores grandes */
+	margin: 0 auto;
+	padding: 3rem 2rem;
+	border-radius: 16px;
+	box-shadow: var(--shadow-lg);
+	border: none; /* Eliminamos el borde anticuado */
+}
+
+/* Lista de enlaces */
+ul.Index {
+	list-style: none; /* Quitamos las viñetas feas */
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem; /* Espaciado uniforme entre botones */
+}
+
+ul.Index li {
+	margin: 0;
+}
+
+/* Estilización de los enlaces para que parezcan botones de una App */
+ul.Index li a {
+	display: block;
+	padding: 1.2rem 1.5rem;
+	background-color: #f8f9fa;
+	color: var(--text-main);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.1rem;
+	border-radius: 10px;
+	border-left: 6px solid var(--accent-color);
+	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+	box-shadow: var(--shadow-sm);
+	position: relative;
+	overflow: hidden;
+}
+
+/* Micro-interacción: Efecto hover al pasar el ratón */
+ul.Index li a:hover {
+	background-color: var(--accent-color);
+	color: #ffffff;
+	transform: translateX(10px); /* El botón se desliza ligeramente a la derecha */
+	box-shadow: 0 8px 15px rgba(9, 132, 227, 0.3);
+	border-left: 6px solid var(--hover-color);
+}
